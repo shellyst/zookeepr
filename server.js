@@ -1,6 +1,7 @@
 const express = require("express");
 const { animals } = require("./data/animals");
 
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 //Takes in req query as an argument and filter through the animals accordingly
@@ -58,6 +59,6 @@ app.get("/api/animals", (req, res) => {
 });
 //Whatever string of query parameters used in URL will become JSON
 
-app.listen(3001, () => {
-  console.log("API now on Port 3001!");
+app.listen(PORT, () => {
+  console.log(`API server now on port ${PORT}!`);
 });
